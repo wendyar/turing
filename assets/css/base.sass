@@ -1,0 +1,74 @@
+---
+---
+
+@import colores
+
+.dev
+  border: 2px dotted red
+
+body
+  background-color: $fondo
+
+.contenedor
+  border-left: 1px solid #ccc
+  border-right: 1px solid #ccc
+  width: 80%
+  margin: auto
+  background-color: #fff
+
+
+.cabecera-principal
+  display: flex
+  padding: 5px
+  .titulo
+    color: $titulo
+    font-size: 28px
+    margin: 0
+
+.menu
+  padding: 7px
+  height: 60px
+  display: flex
+  a
+    text-decoration: none
+    background-color: $btn-sesion
+    color: #fff
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    flex-grow: 1
+    &:first-child
+      border-top-left-radius: 5px
+      border-bottom-left-radius: 5px
+    &:last-child
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
+  a:hover
+    cursor: pointer
+    background-color: $btn-sesion-hover
+
+.imagen-principal
+  height: 250px
+  background-size: cover
+
+#imagen-info
+  background-image: url('../imagenes/libros5.jpeg')
+
+
+article
+  padding: 10px
+  p
+    text-align: justify
+
+.pie-principal
+  background-color: darken($titulo, 10)
+  color: #fff
+  padding: 20px
+  text-align: center
+
+@media screen and (max-width: 768px)
+  .contenedor
+    width: 100%
+  .titulo
+    text-align: center
