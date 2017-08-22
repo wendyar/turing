@@ -1,12 +1,98 @@
+.titulos
+  font-family: 'Montserrat', sans-serif
 h1
+  @extend .titulos
   font-size: 30px
 h2
+  @extend .titulos
   font-size: 26px
 h3
+  @extend .titulos
   font-size: 23px
 h4
+  @extend .titulos
   font-size: 19px
 h5
+  @extend .titulos
   font-size: 17px
 h6
+  @extend .titulos
   font-size: 14px
+
+
+$fondo: #F5F1E3
+$titulo: #7B604A
+
+$success: #1e5622
+$warning: #E8E288
+$error: #ac0000
+$info: #3c69db
+$general: #ababab
+
+$link: #004e6a
+$link-hover: lighten($link, 10)
+
+$btn-sesion: #232323
+$btn-sesion-hover: lighten($btn-sesion, 30)
+
+
+$btn-ingresar: #1e5622
+$ingresar-fondo: #4d4d4d
+
+$pie-principal-color: darken($titulo, 10)
+
+
+
+
+.general-text
+  color: $general
+.general-background
+  background-color: $general
+  color: black
+.btn-general
+  @extend .general-background
+
+
+.success-text
+  color: $success
+.success-background
+  background-color: $success
+  color: white
+.btn-success
+  @extend .success-background
+  &:hover
+    background-color: lighten($success, 15)
+
+
+.warning-text
+  color: $warning
+.warning-background
+  background-color: $warning
+  color: black
+
+
+.error-text
+  color: $error
+.error-background
+  background-color: $error
+  color: white
+.btn-error
+  @extend .error-background
+  &:hover
+    background: lighten($error, 5)
+
+
+.info-text
+  color: $info
+.info-background
+  background-color: $info
+  color: black
+
+
+.btn-disabled
+  background-color: lighten($general, 20)
+  color: black
+  &:hover
+    background-color: lighten($general, 20)
+    color: black
+    cursor: not-allowed

@@ -1,14 +1,10 @@
 ---
 ---
-@import colores
+@import general
 
-
-h1
-  font-size: 30px
 
 body
   min-height: 100vh
-  font-family: 'Open Sans', sans-serif
 
   background-image: url("../imagenes/libros9.jpg")
   background-size: cover
@@ -32,14 +28,8 @@ body
 
 
 .titulo
-  font-family: 'Raleway', sans-serif
   padding-left: 5px
-  color: #0696dd
-
-#btn-enviar
-  background-color: $btn-ingresar
-  &:hover
-    background-color: $btn-ingresar-hover
+  color: $info
 
 
 @media screen and (max-width: 768px)
@@ -56,3 +46,7 @@ body
 
   label, .desc
     color: #fff
+  .btn-success
+    background: lighten($success, 15)
+    &:hover
+      background: lighten($success, 20)
