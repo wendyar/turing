@@ -30,7 +30,7 @@ body
   justify-content: flex-end
   a
     text-decoration: none
-    background: linear-gradient($btn-sesion, $btn-sesion-hover)
+    background-color: $btn-sesion
     color: #fff
     display: flex
     align-items: center
@@ -45,7 +45,7 @@ body
       border-bottom-right-radius: 5px
   a:hover
     cursor: pointer
-    background: $btn-sesion-hover
+    background: lighten($btn-sesion, 15)
 
 
 
@@ -126,10 +126,10 @@ body
       list-style: none
       padding: 5px
       &:hover
-        border-left: 2px solid $btn-sesion-hover
+        border-left: 2px solid $btn-sesion
 
 .lista-activo
-  border-left: 2px solid $btn-sesion-hover
+  border-left: 2px solid $btn-sesion
 
 .contenedor
   padding: 10px
