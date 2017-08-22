@@ -5,11 +5,12 @@
 
 @import colores
 
+@import cuenta
 
 body
   background-color: $fondo
 
-.contenedor
+.contenedor__principal
   border-left: 1px solid #ccc
   border-right: 1px solid #ccc
   width: 80%
@@ -17,10 +18,12 @@ body
   background-color: #fff
 
 
+
 .cabecera__contenedor
   display: flex
   padding-left: 5px
   padding-right: 5px
+
 
 
 .inises__contenedor
@@ -49,31 +52,45 @@ body
     background: $btn-sesion-hover
 
 
+
 .menu__contenedor
   .menu__titulo
     width: 100%
     color: $titulo
     margin: 0
 
+
 .menu
   display: flex
   align-self: center
   margin-bottom: 5px
-  a
-    text-decoration: none
-    // border-top: 1px solid
-    padding: 10px
+  > a
     flex-grow: 1
-    text-align: center
     &:hover
-      color: $btn-sesion
       border-top: 3px solid
+
+
+.menu__item
+  text-decoration: none
+  padding: 10px
+  text-align: center
+  &:hover
+    color: $btn-sesion
+
+
+
+.menu__usuario
+  a
+    color: lighten(red, 10)
+    &:hover
+      color: lighten(red, 20)
 
 .portada
   height: 250px
   overflow: hidden
   img
     width: 100%
+
 
 
 .contenido__principal
@@ -84,12 +101,12 @@ body
 
 
 
-
 .pie-principal
   background-color: $pie-principal-color
   color: #fff
   padding: 20px
   text-align: center
+
 
 
 .contenido-error
@@ -99,8 +116,30 @@ body
     max-width: 100%
 
 
+.tabla
+  overflow: auto
+
+.panel
+  border: 1px solid #ccc
+  border-radius: 3px
+  ul
+    padding: 0
+    margin: 0
+    li
+      list-style: none
+      padding: 5px
+      &:hover
+        border-left: 2px solid $btn-sesion-hover
+
+.lista-activo
+  border-left: 2px solid $btn-sesion-hover
+
+.contenedor
+  padding: 10px
+
+
 @media screen and (max-width: 768px)
-  .contenedor
+  .contenedor__principal
     width: 100%
   .menu__titulo
     text-align: center
