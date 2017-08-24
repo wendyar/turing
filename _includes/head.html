@@ -10,4 +10,15 @@
   {% endif %}
 </title>
 
+
 <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}assets/css/kube.min.css">
+
+{% if layout.css_files %}
+<!-- Hojas de estilos adicionales, que se recibe como parámetro -->
+  {% for stylesheet in layout.css_files %}
+
+    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}assets/{{ stylesheet.path }}" >
+
+  {% endfor %}
+
+{% endif %}

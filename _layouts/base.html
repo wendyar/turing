@@ -1,27 +1,27 @@
+---
+# Hojas de estilo
+css_files:
+  - path: js/vegas/vegas.min.css
+  - path: css/base.css
+
+js_files:
+  - path: js/vegas/vegas.min.js
+  - path: js/base.js
+---
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    {% include estilos-base.html %}
-
-    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}assets/js/vegas/vegas.min.css">
-    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}assets/css/base.css">
+    {% include head.html %}
   </head>
   <body>
     <div class="contenedor__principal">
-
       {% include header.html %}
 
-
       {{ content }}
-
 
       <footer class="pie-principal">Copyright 2017 - Wendy Argente</footer>
     </div>
 
-
-    <script src="{{ site.url }}{{ site.baseurl }}assets/js/jquery-3.2.1.min.js" charset="utf-8"></script>
-    <script src="{{ site.url }}{{ site.baseurl }}assets/js/vegas/vegas.min.js" charset="utf-8"></script>
-    <script src="{{ site.url }}{{ site.baseurl }}assets/js/kube.min.js" charset="utf-8"></script>
-    <script src="{{ site.url }}{{ site.baseurl }}assets/js/base.js" charset="utf-8"></script>
+    {% include js_files.html %}
   </body>
 </html>

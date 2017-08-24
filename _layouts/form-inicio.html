@@ -1,18 +1,17 @@
+---
+css_files:
+  - path: css/form-inicio.css
+---
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  {% include estilos-base.html %}
-
-  <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}assets/css/form-inicio.css">
+  {% include head.html %}
 </head>
-
-
   <body>
     {{ content }}
 
-
-    <script src="{{ site.url }}{{ site.baseurl }}assets/js/kube.min.js" charset="utf-8"></script>
+    {% include js_files.html %}
   </body>
 
 </html>
