@@ -4,7 +4,7 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-08-31T02:01:16-05:00
+# @Last modified time: 2017-08-31T03:39:35-05:00
 # @License: MIT
 
 
@@ -160,7 +160,7 @@ class System
     //
     // Definición de constantes
     //
-    define('SERVER_NAME', 'http://'.$_SERVER['SERVER_NAME']);
+    define('SERVER_NAME', 'https://'.$_SERVER['SERVER_NAME']);
     define('BASEPATH', SERVER_NAME.$this->basepath);
     define('BASE_URL', BASEPATH.DEFAULT_CONTROLLER.'.php');
     define('APPPATH', SERVER_NAME.$this->basepath.'app/');
