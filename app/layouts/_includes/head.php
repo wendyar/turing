@@ -4,7 +4,7 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-08-31T00:47:37-05:00
+# @Last modified time: 2017-08-31T03:00:51-05:00
 # @License: MIT
 ?>
 
@@ -13,7 +13,7 @@
 <meta http-equiv="content-language" content="es">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?php echo $this->titulo; ?></title>
+<title><?php echo $this->titulo ?></title>
 
 
 <link rel="stylesheet" href="<?php echo STATICPATH.'css/kube.min.css'; ?>" >

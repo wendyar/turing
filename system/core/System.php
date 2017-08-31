@@ -4,7 +4,7 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-08-31T01:21:40-05:00
+# @Last modified time: 2017-08-31T02:01:16-05:00
 # @License: MIT
 
 
@@ -123,7 +123,10 @@ class System
     //
     $this->routes = explode('/', $this->uri);
 
-    $this->controller = $this->routes[1];
+    if (isset($this->routes[1]))
+    {
+      $this->controller = $this->routes[1];
+    }
     // echo "controllerName: $this->controller<br>";
 
     //
@@ -148,7 +151,7 @@ class System
    * Define las constantes para trabajar dentro del
    * proyecto de la aplicación
    *
-   * @return void 
+   * @return void
    */
   public function constantes()
   {

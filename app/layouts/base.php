@@ -4,7 +4,7 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-08-31T01:09:07-05:00
+# @Last modified time: 2017-08-31T03:05:09-05:00
 # @License: MIT
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
     <div class="contenedor__principal">
       <?php $this->obj->include('header') ?>
 
-      <?php $this->obj->include($this->pagina, 'views/') ?>
+      <?php $this->obj->include($this->pagina, "views/") ?>
 
       <footer class="pie-principal">Copyright 2017 - Wendy Argente</footer>
     </div>

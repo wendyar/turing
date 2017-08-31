@@ -4,7 +4,7 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-08-31T01:11:43-05:00
+# @Last modified time: 2017-08-31T03:04:11-05:00
 # @License: MIT
 
 
@@ -14,7 +14,7 @@
  * Este controlador es básicamente el encargado de administrar
  * en parte las sesiones y las páginas que se despachan a través
  * de este controlador.
- * 
+ *
  */
 class Inicio_Controller extends Controller {
 

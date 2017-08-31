@@ -4,7 +4,7 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-08-31T01:12:18-05:00
+# @Last modified time: 2017-08-31T03:03:04-05:00
 # @License: MIT
 
 
@@ -56,15 +56,15 @@ class View
 
     if (file_exists($plantilla_path))
     {
+
       ob_start();
+
       // you can access $this->data in template
       require ($plantilla_path);
 
       $output = ob_get_contents();
-      ob_end_clean();
-      ob_end_flush();
 
-      echo $output;
+      // echo $output;
     }
   }
 
@@ -79,6 +79,7 @@ class View
    */
   public function include($file, $folder = "layouts/_includes/")
   {
+
     $file_path = 'app/'.$folder.$file.'.php';
 
     ob_start();
@@ -87,10 +88,7 @@ class View
 
     $output = ob_get_contents();
 
-    ob_end_clean();
-    ob_end_flush();
-
-    echo $output;
+    // echo $output;
   }
 
 }
