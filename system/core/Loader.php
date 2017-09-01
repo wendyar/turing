@@ -4,7 +4,7 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-08-31T01:06:37-05:00
+# @Last modified time: 2017-08-31T20:14:01-05:00
 # @License: MIT
 
 
@@ -39,11 +39,6 @@ class Loader
   {
     // Nueva instancia de view para llamar a las páginas de error
     $view = new view();
-
-    if ( ! isset($controllerName) || $controllerName == "")
-    {
-      $controllerName = DEFAULT_CONTROLLER;
-    }
 
     //
     // Comprueba que exista el controlador solicitado

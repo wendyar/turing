@@ -4,7 +4,7 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-08-31T03:39:35-05:00
+# @Last modified time: 2017-08-31T21:42:48-05:00
 # @License: MIT
 
 
@@ -116,7 +116,19 @@ class System
   {
     $this->basepath = implode('/', array_slice(explode('/', $_SERVER['SCRIPT_NAME']), 0, - 1)).'/';
 
+
     $this->uri = substr($_SERVER['REQUEST_URI'], strlen($this->basepath));
+
+    // echo "<pre>";
+    // print_r("uri desde la funcion: ".$_SERVER['REQUEST_URI']);
+    // echo "</pre>";
+
+
+
+    if ( ! isset($this->controller))
+    {
+      $this->controller = DEFAULT_CONTROLLER;
+    }
 
     //
     // Define las rutas y las guarda en un array
@@ -134,7 +146,7 @@ class System
     //
     isset($this->routes[2])
     ? $this->method = $this->routes[2]
-    : $this->method = "";
+    : $this->method = "index";
     // echo "methodName: $this->method<br>";
 
     //
@@ -144,6 +156,7 @@ class System
     ? $this->param = $this->routes[3]
     : $this->param = "";
     // echo "parametros: $this->param<br>";
+
   }
 
 
@@ -160,9 +173,9 @@ class System
     //
     // Definición de constantes
     //
-    define('SERVER_NAME', 'https://'.$_SERVER['SERVER_NAME']);
+    define('SERVER_NAME', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME']);
     define('BASEPATH', SERVER_NAME.$this->basepath);
-    define('BASE_URL', BASEPATH.DEFAULT_CONTROLLER.'.php');
+    define('BASE_URL', BASEPATH.'index.php');
     define('APPPATH', SERVER_NAME.$this->basepath.'app/');
     define('STATICPATH', APPPATH.'assets/');
 
