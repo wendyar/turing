@@ -10,17 +10,17 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <?php $this->obj->include('head') ?>
+    <?php $this->view->include('head') ?>
   </head>
   <body>
     <div class="contenedor__principal">
-      <?php $this->obj->include('header') ?>
+      <?php $this->view->include('header') ?>
 
-      <?php $this->obj->include($this->pagina, "views/") ?>
+      <?php $this->view->include($this->pagina, "views/") ?>
 
       <footer class="pie-principal">Copyright 2017 - Wendy Argente</footer>
     </div>
 
-    <?php $this->obj->include('js_files') ?>
+    <?php $this->view->include('js_files') ?>
   </body>
 </html>

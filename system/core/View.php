@@ -4,12 +4,10 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-08-31T03:03:04-05:00
+# @Last modified time: 2017-09-04T23:19:02-05:00
 # @License: MIT
 
-
-
-
+namespace System\Core;
 
 /**
  * Clase vista
@@ -21,74 +19,65 @@
  */
 class View
 {
-  /**
-   * Almacena el nombre de la plantilla a llamar
-   * @var string
-   */
-  public $plantilla;
+    /**
+     * Almacena el nombre de la plantilla a llamar
+     * @var string
+     */
+    public $plantilla;
 
 
-  /**
-   * Guarda el nombre del archivo a cargar
-   * @var string
-   */
-  public $archivo;
+    /**
+     * Guarda el nombre del archivo a cargar
+     * @var string
+     */
+    public $archivo;
 
 
-  // -----------------------------------------------------------------
+    // -----------------------------------------------------------------
 
-  function __construct()
-  {
-  }
-
-  // -----------------------------------------------------------------
-
-
-  /**
-   * Función que carga el archivo que se está manejando como plantilla
-   *
-   * @param  string $plantilla layout
-   * @return void
-   */
-  public function render($plantilla)
-  {
-    $plantilla_path = 'app/layouts/'.$plantilla.'.php';
-
-    if (file_exists($plantilla_path))
+    public function __construct()
     {
-
-      ob_start();
-
-      // you can access $this->data in template
-      require ($plantilla_path);
-
-      $output = ob_get_contents();
-
-      // echo $output;
     }
-  }
+
+    // -----------------------------------------------------------------
 
 
-  /**
-   * Función include, trata de incluir una porción de código
-   * para insertarlo una plantilla o layout.
-   *
-   * @param  string $file   Nombre del archivo a cargar
-   * @param  string $folder Ruta del archivo a cargar
-   * @return void
-   */
-  public function include($file, $folder = "layouts/_includes/")
-  {
+    /**
+     * Función que carga el archivo que se está manejando como plantilla
+     *
+     * @param  string $plantilla layout
+     * @return void
+     */
+    public function render($plantilla)
+    {
+        $plantilla_path = 'app/layouts/'.$plantilla.'.php';
 
-    $file_path = 'app/'.$folder.$file.'.php';
+        if (file_exists($plantilla_path)) {
+            ob_start();
 
-    ob_start();
+            require($plantilla_path);
 
-    require($file_path);
+            $output = ob_get_contents();
+        }
+    }
 
-    $output = ob_get_contents();
 
-    // echo $output;
-  }
+    /**
+     * Función include, trata de incluir una porción de código
+     * para insertarlo una plantilla o layout.
+     *
+     * @param  string $file   Nombre del archivo a cargar
+     * @param  string $folder Ruta del archivo a cargar
+     * @return void
+     */
+    public function include($file, $folder = "layouts/_includes/")
+    {
+        $file_path = 'app/'.$folder.$file.'.php';
 
+        ob_start();
+
+        require($file_path);
+
+        $output = ob_get_contents();
+    }
 }

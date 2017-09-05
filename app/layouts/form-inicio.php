@@ -13,14 +13,14 @@
 <html lang="es">
 <head>
 
-  <?php $this->obj->include('head'); ?>
+  <?php $this->view->include('head'); ?>
 
   <link rel="stylesheet" href="<?php echo STATICPATH.'css/form-inicio.css' ?>" >
 </head>
   <body>
-    <?php $this->obj->include($this->pagina, 'views/') ?>
+    <?php $this->view->include($this->pagina, 'views/') ?>
 
-    <?php $this->obj->include('js_files') ?>
+    <?php $this->view->include('js_files') ?>
   </body>
 
 </html>

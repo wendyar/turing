@@ -4,9 +4,12 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-08-31T03:04:11-05:00
+# @Last modified time: 2017-09-05T01:53:05-05:00
 # @License: MIT
 
+namespace System\App;
+
+use System\Core\Controller as Controller;
 
 /**
  * Controllador de Inicio
@@ -16,47 +19,45 @@
  * de este controlador.
  *
  */
-class Inicio_Controller extends Controller {
+class Inicio extends Controller
+{
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
-  public function __construct()
-  {
-    parent::__construct();
-    $this->view->obj = $this->view;
-  }
+    public function index()
+    {
+        $this->view->titulo = "Inicio";
+        $this->view->pagina = "index";
+        $this->view->render('base');
+    }
 
-  public function index()
-  {
-    $this->view->titulo = "Inicio";
-    $this->view->pagina = "index";
-    $this->view->render('base');
-  }
+    public function informacion()
+    {
+        $this->view->titulo = "Información del sitio";
+        $this->view->pagina = "informacion";
+        $this->view->render("base");
+    }
 
-  public function informacion()
-  {
-    $this->view->titulo = "Información del sitio";
-    $this->view->pagina = "informacion";
-    $this->view->render("base");
-  }
+    public function categorias()
+    {
+        $this->view->titulo = "Categorías";
+        $this->view->pagina = "categorias";
+        $this->view->render("base");
+    }
 
-  public function categorias()
-  {
-    $this->view->titulo = "Categorías";
-    $this->view->pagina = "categorias";
-    $this->view->render("base");
-  }
+    public function ingresar()
+    {
+        $this->view->titulo = "Ingresar";
+        $this->view->pagina = "ingresar";
+        $this->view->render("form-inicio");
+    }
 
-  public function ingresar()
-  {
-    $this->view->titulo = "Ingresar";
-    $this->view->pagina = "ingresar";
-    $this->view->render("form-inicio");
-  }
-
-  public function registrar()
-  {
-    $this->view->titulo = "Nuevo registro";
-    $this->view->pagina = "registrar";
-    $this->view->render("form-inicio");
-  }
-
+    public function registrar()
+    {
+        $this->view->titulo = "Nuevo registro";
+        $this->view->pagina = "registrar";
+        $this->view->render("form-inicio");
+    }
 }
