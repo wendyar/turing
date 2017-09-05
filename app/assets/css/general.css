@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Thin.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype"); }
+
+.titulos, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; }
+
+h1 {
+  font-size: 30px; }
+
+h2 {
+  font-size: 26px; }
+
+h3 {
+  font-size: 23px; }
+
+h4 {
+  font-size: 19px; }
+
+h5 {
+  font-size: 17px; }
+
+h6 {
+  font-size: 14px; }
+
+.req {
+  color: #ac0000; }
+
+.general-text {
+  color: #ababab; }
+
+.general-background, .btn-general {
+  background-color: #ababab;
+  color: black; }
+
+.success-text {
+  color: #1e5622; }
+
+.success-background, .btn-success {
+  background-color: #1e5622;
+  color: white; }
+
+.btn-success:hover {
+  background-color: #328f38; }
+
+.warning-text {
+  color: #E8E288; }
+
+.warning-background {
+  background-color: #E8E288;
+  color: black; }
+
+.error-text {
+  color: #ac0000; }
+
+.error-background, .btn-error {
+  background-color: #ac0000;
+  color: white; }
+
+.btn-error:hover {
+  background: #c60000; }
+
+.info-text {
+  color: #3c69db; }
+
+.info-background {
+  background-color: #3c69db;
+  color: black; }
+
+.btn-disabled {
+  background-color: #dedede;
+  color: black; }
+  .btn-disabled:hover {
+    background-color: #dedede;
+    color: black;
+    cursor: not-allowed; }

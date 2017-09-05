@@ -1,0 +1,52 @@
+---
+---
+@import general
+
+
+body
+  min-height: 100vh
+
+  background-image: url("../imagenes/libros9.jpg")
+  background-size: cover
+
+  display: flex
+  justify-content: center
+  align-items: center
+
+
+.contenedor
+  background-color: white
+  border: 1px solid #ccc
+  border-radius: 5px
+  width: 500px
+  min-height: 400px
+  padding: 20px
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+
+.titulo
+  padding-left: 5px
+  color: $info
+
+
+@media screen and (max-width: 768px)
+  body
+    background: none
+    background-color: #4d4d4d
+
+  .contenedor
+    border: none
+    background: none
+
+  .titulo
+    color: white
+
+  label, .desc, .req
+    color: #fff
+  .btn-success
+    background: lighten($success, 10)
+    &:hover
+      background: lighten($success, 20)
