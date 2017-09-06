@@ -5,7 +5,11 @@
 # @Project: Turing
 # @Filename: insertar.php
 # @Last modified by:   wendylu
+<<<<<<< HEAD
 # @Last modified time: 2017-09-06T05:38:45-05:00
+=======
+# @Last modified time: 2017-09-06T05:51:49-05:00
+>>>>>>> dev-front-end
 # @License: MIT
 
 
@@ -51,12 +55,12 @@ $paises = $db->get('pais');
           <a href="registrar.html">Registrarse</a>
         </div>
 
-        <div class="col col-12 row menu__contenedor">
-          <div class="col col-6">
+        <div class="col col-12 row auto menu__contenedor">
+          <div class="col">
             <h1 class="menu__titulo">Biblioteca Virtual Turing</h1>
           </div>
 
-          <nav class="menu col col-6">
+          <nav class="menu col">
             <a class="menu__item" href="index.html">Inicio</a>
             <a class="menu__item" href="informacion.html">Información</a>
             <a class="menu__item" href="categorias.html">categorías</a>
@@ -68,9 +72,12 @@ $paises = $db->get('pais');
 
 
       <section class="contenido__principal" id="app">
+<<<<<<< HEAD
         <pre>
           {{ $data }}
         </pre>
+=======
+>>>>>>> dev-front-end
 
         <article class="">
           <h2>Registrar nuevo libro</h2>
