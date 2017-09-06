@@ -5,7 +5,6 @@
 # @Project: Turing
 # @Filename: insertar.php
 # @Last modified by:   wendylu
-# @Last modified time: 2017-09-06T06:07:46-05:00
 # @License: MIT
 
 
