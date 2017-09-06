@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Thin.ttf") format("truetype"); }
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype"); }
+.titulos, h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif; }
+
+h1 {
+  font-size: 30px; }
+
+h2 {
+  font-size: 26px; }
+
+h3 {
+  font-size: 23px; }
+
+h4 {
+  font-size: 19px; }
+
+h5 {
+  font-size: 17px; }
+
+h6 {
+  font-size: 14px; }
+
+.req {
+  color: #ac0000; }
+
+.general-text {
+  color: #ababab; }
+
+.general-background, .btn-general {
+  background-color: #ababab;
+  color: black; }
+
+.success-text {
+  color: #1e5622; }
+
+.success-background, .btn-success {
+  background-color: #1e5622;
+  color: white; }
+
+.btn-success:hover {
+  background-color: #328f38; }
+
+.warning-text {
+  color: #E8E288; }
+
+.warning-background {
+  background-color: #E8E288;
+  color: black; }
+
+.error-text {
+  color: #ac0000; }
+
+.error-background, .btn-error {
+  background-color: #ac0000;
+  color: white; }
+
+.btn-error:hover {
+  background: #c60000; }
+
+.info-text {
+  color: #3c69db; }
+
+.info-background {
+  background-color: #3c69db;
+  color: black; }
+
+.btn-disabled {
+  background-color: #dedede;
+  color: black; }
+  .btn-disabled:hover {
+    background-color: #dedede;
+    color: black;
+    cursor: not-allowed; }
+
+.mymessage {
+  margin: 10px 0;
+  padding: 10px;
+  min-height: 60px;
+  display: flex;
+  border-radius: 4px;
+  align-items: center; }
+  .mymessage p {
+    margin: 0; }
+
+.mymessage-error {
+  background-color: #f3dcdc;
+  color: #ac0000;
+  border: 1px solid #ffacac; }
+
+.mymessage-success {
+  background-color: #d8f6d5;
+  color: #1e5622;
+  border: 1px solid #98db9d; }
+
+.mymessage-warning {
+  background-color: #f9fddf;
+  color: #9f971f;
+  border: 1px solid #dcd248; }
+
+.mymessage-info {
+  background-color: #d8eaf9;
+  color: #3c69db;
+  border: 1px solid #a8bcef; }
+
+body {
+  min-height: 100vh;
+  background-image: url("../imagenes/libros9.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.contenedor {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 500px;
+  min-height: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.titulo {
+  padding-left: 5px;
+  color: #3c69db; }
+
+@media screen and (max-width: 768px) {
+  body {
+    background: none;
+    background-color: #4d4d4d; }
+
+  .contenedor {
+    border: none;
+    background: none; }
+
+  .titulo {
+    color: white; }
+
+  label, .desc, .req {
+    color: #fff; }
+
+  .btn-success {
+    background: #2b7c31; }
+    .btn-success:hover {
+      background: #38a240; } }

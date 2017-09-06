@@ -1,0 +1,228 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Thin.ttf") format("truetype"); }
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype"); }
+.titulos, h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif; }
+
+h1 {
+  font-size: 30px; }
+
+h2 {
+  font-size: 26px; }
+
+h3 {
+  font-size: 23px; }
+
+h4 {
+  font-size: 19px; }
+
+h5 {
+  font-size: 17px; }
+
+h6 {
+  font-size: 14px; }
+
+.req {
+  color: #ac0000; }
+
+.general-text {
+  color: #ababab; }
+
+.general-background, .btn-general {
+  background-color: #ababab;
+  color: black; }
+
+.success-text {
+  color: #1e5622; }
+
+.success-background, .btn-success {
+  background-color: #1e5622;
+  color: white; }
+
+.btn-success:hover {
+  background-color: #328f38; }
+
+.warning-text {
+  color: #E8E288; }
+
+.warning-background {
+  background-color: #E8E288;
+  color: black; }
+
+.error-text {
+  color: #ac0000; }
+
+.error-background, .btn-error {
+  background-color: #ac0000;
+  color: white; }
+
+.btn-error:hover {
+  background: #c60000; }
+
+.info-text {
+  color: #3c69db; }
+
+.info-background {
+  background-color: #3c69db;
+  color: black; }
+
+.btn-disabled {
+  background-color: #dedede;
+  color: black; }
+  .btn-disabled:hover {
+    background-color: #dedede;
+    color: black;
+    cursor: not-allowed; }
+
+.mymessage {
+  margin: 10px 0;
+  padding: 10px;
+  min-height: 60px;
+  display: flex;
+  border-radius: 4px;
+  align-items: center; }
+  .mymessage p {
+    margin: 0; }
+
+.mymessage-error {
+  background-color: #f3dcdc;
+  color: #ac0000;
+  border: 1px solid #ffacac; }
+
+.mymessage-success {
+  background-color: #d8f6d5;
+  color: #1e5622;
+  border: 1px solid #98db9d; }
+
+.mymessage-warning {
+  background-color: #f9fddf;
+  color: #9f971f;
+  border: 1px solid #dcd248; }
+
+.mymessage-info {
+  background-color: #d8eaf9;
+  color: #3c69db;
+  border: 1px solid #a8bcef; }
+
+body {
+  background-color: #F5F1E3; }
+
+.contenedor__principal {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  width: 80%;
+  margin: auto;
+  background-color: #fff; }
+
+.cabecera__contenedor {
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px; }
+
+.inises__contenedor {
+  display: none;
+  padding: 7px;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end; }
+  .inises__contenedor a {
+    text-decoration: none;
+    background-color: #232323;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px; }
+    .inises__contenedor a:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px; }
+    .inises__contenedor a:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px; }
+  .inises__contenedor a:hover {
+    cursor: pointer;
+    background: #494949; }
+
+.menu__contenedor .menu__titulo {
+  width: 100%;
+  color: #7B604A;
+  margin: 0; }
+
+.menu {
+  display: flex;
+  align-self: center;
+  margin-bottom: 5px; }
+  .menu > a {
+    flex-grow: 1; }
+    .menu > a:hover {
+      border-top: 3px solid; }
+
+.menu__item {
+  color: #004e6a;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center; }
+  .menu__item:hover {
+    color: #00749d; }
+
+.menu__usuario a {
+  color: #ff3333; }
+  .menu__usuario a:hover {
+    color: #ff6666; }
+
+.portada {
+  height: 250px;
+  overflow: hidden; }
+  .portada img {
+    width: 100%; }
+
+.contenido__principal {
+  min-height: 70vh; }
+  .contenido__principal article {
+    padding: 10px; }
+    .contenido__principal article p {
+      text-align: justify; }
+
+.pie-principal {
+  background-color: #5b4737;
+  color: #fff;
+  padding: 20px;
+  text-align: center; }
+
+.contenido-error {
+  text-align: center; }
+  .contenido-error img {
+    padding: 15px;
+    max-width: 100%; }
+
+.tabla {
+  overflow: auto; }
+
+.panel {
+  border: 1px solid #ccc;
+  border-radius: 3px; }
+  .panel ul {
+    padding: 0;
+    margin: 0; }
+    .panel ul li {
+      list-style: none;
+      padding: 5px; }
+      .panel ul li:hover {
+        border-left: 2px solid #232323; }
+
+.lista-activo {
+  border-left: 2px solid #232323; }
+
+.contenedor {
+  padding: 10px; }
+
+@media screen and (max-width: 768px) {
+  .contenedor__principal {
+    width: 100%; }
+
+  .menu__titulo {
+    text-align: center; } }

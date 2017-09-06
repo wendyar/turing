@@ -1,0 +1,10 @@
+<!-- Default files -->
+<script src="{{ site.url }}{{ site.baseurl }}assets/js/jquery.min.js" charset="utf-8"></script>
+<script src="{{ site.url }}{{ site.baseurl }}assets/js/kube.min.js" charset="utf-8"></script>
+
+{% if layout.js_files %}
+<!-- Additional script files -->
+  {% for file in layout.js_files %}
+  <script src="{{ site.url }}{{ site.baseurl }}assets/{{ file.path }}" charset="utf-8"></script>
+  {% endfor %}
+{% endif %}
