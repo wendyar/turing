@@ -5,7 +5,7 @@
 # @Project: Turing
 # @Filename: insertar.php
 # @Last modified by:   wendylu
-# @Last modified time: 2017-09-06T00:10:27-05:00
+# @Last modified time: 2017-09-06T05:38:45-05:00
 # @License: MIT
 
 
@@ -45,6 +45,7 @@ $paises = $db->get('pais');
     <div class="contenedor__principal">
       <header class="cabecera__contenedor row">
 
+
         <div class="col col-12 inises__contenedor">
           <a href="ingresar.html">Iniciar sesión</a>
           <a href="registrar.html">Registrarse</a>
@@ -66,7 +67,11 @@ $paises = $db->get('pais');
       </header>
 
 
-      <section class="contenido__principal">
+      <section class="contenido__principal" id="app">
+        <pre>
+          {{ $data }}
+        </pre>
+
         <article class="">
           <h2>Registrar nuevo libro</h2>
 
@@ -78,17 +83,19 @@ $paises = $db->get('pais');
                 <!-- Nombres del autor -->
                 <div class="form-item">
                   <label for="autor-nombres">Nombre del autor</label>
-                  <input type="text" name="autor-nombres" id="autor-nombres" value="" placeholder="Escribe los nombres del autor">
+                  <input type="text" name="autor-nombres" id="autor-nombres" value="" placeholder="Escribe los nombres del autor" required v-model='autor_nuevo_nombres'>
                 </div>
+
                 <!-- Apellidos del autor -->
                 <div class="form-item">
                   <label for="autor-apellidos">Apellidos</label>
-                  <input type="text" name="autor-apellidos" id="autor-apellidos" value="" placeholder="Escribe los apellidos del autor">
+                  <input type="text" name="autor-apellidos" id="autor-apellidos" value="" placeholder="Escribe los apellidos del autor" required v-model='autor_nuevo_apellidos'>
                 </div>
+
                 <!-- Nacionalidad del autor -->
                 <div class="form-item">
                   <label for="pais_id">Nacionalidad</label>
-                  <select class="pais_id" name="pais_id" id="pais_id">
+                  <select class="pais_id" name="pais_id" id="pais_id" v-model='autor_nuevo_pais' required>
                     <option value=""> -- </option>
                     <?php if (isset($paises)): ?>
                       <?php while ($pais = $paises->fetch_object()) { ?>
@@ -104,11 +111,12 @@ $paises = $db->get('pais');
               </div> <!-- Fin col col-6 -->
 
               <!-- Autor existente -->
-              <div class="col ">
+              <div class="col" v-if='!datos_autor()'>
                 <div class="form-item">
                   <label for="autor-existente">Elegir un autor existente</label>
-                  <select class="" name="autor-existente" id="autor-existente">
+                  <select class="" name="autor-existente" id="autor-existente" v-model='autor_existente'>
                     <option value=""> -- </option>
+                    <option value="1"> Este autor </option>
 
                     <?php if (isset($autores)): ?>
                       <?php while ($autor = $autores->fetch_object()) { ?>
@@ -127,18 +135,18 @@ $paises = $db->get('pais');
             </div>
 
             <!-- Categoría del libro -->
-            <div class="row gutters">
-              <div class="col col-6">
+            <div class="row gutters auto">
+              <div class="col" v-if='!categoria_existente'>
                 <div class="form-item">
                   <label for="categoria">Escribe una nueva categoría</label>
-                  <input type="text" name="categoria" id="categoria" placeholder="Escribe la categoría del libro" value="">
+                  <input type="text" name="categoria" id="categoria" placeholder="Escribe la categoría del libro" value="" v-model='categoria_nueva' required>
                 </div>
               </div>
-              <div class="col col-6">
+              <div class="col" v-if='!categoria_nueva'>
                 <div class="form-item">
                   <label for="categoria-existente">Elegir una categoría existente</label>
 
-                  <select class="" name="categoria-existente">
+                  <select class="" name="categoria-existente" v-model='categoria_existente' required>
                     <option value=""> -- </option>
 
                     <?php if (isset($categorias)): ?>
@@ -186,6 +194,8 @@ $paises = $db->get('pais');
     <!-- Default files -->
     <script src="assets/js/jquery.min.js" charset="utf-8"></script>
     <script src="assets/js/kube.min.js" charset="utf-8"></script>
+    <script src="assets/js/vue.min.js" charset="utf-8"></script>
+    <script src="assets/js/master.js" charset="utf-8"></script>
 
     <!-- Additional script files -->
     <script src="assets/js/vegas/vegas.min.js" charset="utf-8"></script>
