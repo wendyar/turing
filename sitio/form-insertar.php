@@ -5,7 +5,7 @@
 # @Project: Turing
 # @Filename: insertar.php
 # @Last modified by:   wendylu
-# @Last modified time: 2017-09-05T16:53:54-05:00
+# @Last modified time: 2017-09-06T00:10:27-05:00
 # @License: MIT
 
 
@@ -160,7 +160,7 @@ $paises = $db->get('pais');
             <!-- Título del título -->
             <div class="form-item">
               <label for="titulo">Título</label>
-              <input type="text" name="titulo" id="titulo" value="" placeholder="Escribe el título del libro">
+              <input type="text" name="titulo" id="titulo" value="" placeholder="Escribe el título del libro" required>
             </div>
 
             <!-- Descripción del libro -->

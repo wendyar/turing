@@ -5,7 +5,7 @@
 # @Project: Turing
 # @Filename: form-borrado.php
 # @Last modified by:   wendylu
-# @Last modified time: 2017-09-05T21:54:41-05:00
+# @Last modified time: 2017-09-06T00:09:46-05:00
 # @License: MIT
 
 include_once('basedatos.php');
@@ -67,7 +67,7 @@ $db->close();
             <!-- Selección de título -->
             <div class="form-item">
               <label for="titulo_id">Título del libro</label>
-              <select class="" name="titulo_id" id="titulo_id">
+              <select class="" name="titulo_id" id="titulo_id" required>
             <option value=""> -- </option>
 
             <?php
