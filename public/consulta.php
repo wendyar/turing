@@ -5,7 +5,7 @@
 # @Project: Turing
 # @Filename: consulta.php
 # @Last modified by:   wendylu
-# @Last modified time: 2017-09-06T06:30:57-05:00
+# @Last modified time: 2017-09-06T06:54:51-05:00
 # @License: MIT
 
 
@@ -41,7 +41,7 @@ $libros = $db->get('libro');
       </div>
 
 
-      <div class="col col-12 row menu__contenedor">
+      <div class="col col-12 row auto menu__contenedor">
         <div class="col">
           <h1 class="menu__titulo">Biblioteca Virtual Turing</h1>
         </div>
