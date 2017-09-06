@@ -3,3 +3,4 @@ _site
 .jekyll-metadata
 documentacion/
 node_modules/
+public/configuracion.php 
