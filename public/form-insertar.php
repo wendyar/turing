@@ -75,7 +75,7 @@ $paises = $db->get('pais');
 
             <!-- Registrar autor -->
             <div class="row gutters auto">
-              <div class="col">
+              <div class="col" v-if='!autor_existente'>
                 <!-- Nombres del autor -->
                 <div class="form-item">
                   <label for="autor-nombres">Nombre del autor</label>
