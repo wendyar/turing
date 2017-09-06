@@ -5,7 +5,7 @@
 # @Project: Turing
 # @Filename: configuracion.php
 # @Last modified by:   wendylu
-# @Last modified time: 2017-09-06T00:14:03-05:00
+# @Last modified time: 2017-09-06T00:40:15-05:00
 # @License: MIT
 
 /*
@@ -17,8 +17,8 @@
  * conexión con la base de datos.
  */
 return $config = array(
-  'hostname' => '',
-  'username' => '',
-  'password' => '',
-  'database' => ''
+  'hostname' => 'localhost',
+  'username' => 'id2705905_wendyargente',
+  'password' => 'Master10',
+  'database' => 'id2705905_biblioteca'
 );
