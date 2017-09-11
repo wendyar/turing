@@ -4,7 +4,7 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-09-10T08:53:10-05:00
+# @Last modified time: 2017-09-11T04:07:59-05:00
 # @License: MIT
 
 namespace System\Core;
@@ -50,7 +50,7 @@ class View
      */
     public function render($plantilla)
     {
-        $plantilla_path = 'public/app/layouts/'.$plantilla.'.php';
+        $plantilla_path = 'app/layouts/'.$plantilla.'.php';
 
         if (file_exists($plantilla_path)) {
             ob_start();
@@ -72,7 +72,7 @@ class View
      */
     public function include($file, $folder = "layouts/_includes/")
     {
-        $file_path = 'public/app/'.$folder.$file.'.php';
+        $file_path = 'app/'.$folder.$file.'.php';
 
         ob_start();
 

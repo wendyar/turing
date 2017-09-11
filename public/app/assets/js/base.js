@@ -5,7 +5,7 @@
  * @Project: Turing
  * @Filename: base.js
  * @Last modified by:   wendylu
- * @Last modified time: 2017-09-10T21:57:44-05:00
+ * @Last modified time: 2017-09-11T04:08:31-05:00
  * @License: MIT
  */
 $(document).ready(function(){
@@ -26,12 +26,12 @@ $(document).ready(function(){
   {
     console.log(uri);
     console.log("La uri contiene la palabra index.php");
-    base_url = "../public/app/"
+    base_url = "../app/"
   }
   else {
     console.log(uri);
     console.log("La uri no contiene index");
-    base_url = "public/app/";
+    base_url = "app/";
   }
 
 

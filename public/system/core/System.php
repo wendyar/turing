@@ -4,7 +4,7 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-09-10T08:51:44-05:00
+# @Last modified time: 2017-09-11T04:07:08-05:00
 # @License: MIT
 
 namespace System\Core;
@@ -86,7 +86,7 @@ class System
         //
         // Comprueba que exista el controlador solicitado
         //
-        if (file_exists('public/app/controllers/'.ucfirst($controllerName).'.php')) {
+        if (file_exists('app/controllers/'.ucfirst($controllerName).'.php')) {
 
             // Establece el nombre de la clase del controlador, agrega _Controller
             $classname = ucfirst($controllerName);
@@ -95,7 +95,7 @@ class System
             // Autocarga el controlador o su clase correspondiente.
             //
             spl_autoload_register(function ($classname) use ($controllerName) {
-                $filename = "public/app/controllers/".ucfirst($controllerName).".php";
+                $filename = "app/controllers/".ucfirst($controllerName).".php";
                 require_once($filename);
             });
 
@@ -162,7 +162,7 @@ class System
      */
     public function model($classname, $alias = "")
     {
-        $pathFile = 'public/app/models/'.$classname.'.php';
+        $pathFile = 'app/models/'.$classname.'.php';
 
         /*
          * ------------------------------------------------------
@@ -174,7 +174,7 @@ class System
             exit(1);
         }
 
-        require(dirname(__FILE__).'../../../public/app/models/'.$classname.'.php');
+        require(dirname(__FILE__).'../../../app/models/'.$classname.'.php');
 
         // Carga el nombre de la clase con
         // su correspondiente nombre de espacio

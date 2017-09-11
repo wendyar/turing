@@ -4,7 +4,7 @@
 # @Email:  wendyargente@nube.unadmexico.mx
 # @Project: Turing
 # @Last modified by:   wendylu
-# @Last modified time: 2017-09-10T19:11:07-05:00
+# @Last modified time: 2017-09-11T04:07:14-05:00
 # @License: MIT
 /*
 
@@ -90,7 +90,7 @@ define('BASEPATH', SERVER_NAME.$basepath);
 define('BASE_URL', BASEPATH.'index.php');
 
 // Frente del directorio de la aplicación
-define('APPPATH', SERVER_NAME.$basepath.'public/app/');
+define('APPPATH', SERVER_NAME.$basepath.'app/');
 
 // Frente de los archivos estáticos
 define('STATICPATH', APPPATH.'assets/');
