@@ -1,0 +1,204 @@
+// @Author: Wendy Guadalupe Magaña Argente <wendylu>
+// @Date:   2017-09-08T22:47:42-05:00
+// @Email:  wendyargente@nube.unadmexico.mx
+// @Project: Turing
+// @Filename: base.sass
+// @Last modified by:   wendylu
+// @Last modified time: 2017-09-10T21:23:07-05:00
+// @License: MIT
+
+@import general
+
+body
+  background-color: $fondo
+
+
+// Contenedor principal
+// -------------------------------------------------------------------------
+.contenedor__principal
+  background-color: #fff
+  border-left: 1px solid #ccc
+  margin: auto
+  width: 80%
+  @media screen and (max-width: 768px)
+    width: 100%
+
+
+// Configuración de la cabecera principal
+// -------------------------------------------------------------------------
+.cabecera__contenedor
+  display: flex
+  padding-left: 5px
+  padding-right: 5px
+
+
+// Configuración para los botones de inicio de sesión
+// -------------------------------------------------------------------------
+.inises__contenedor
+  display: flex
+  height: 50px
+  justify-content: flex-end
+  padding: 7px
+
+  a
+    text-decoration: none
+    background-color: $accent
+    color: #fff
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    padding: 15px
+
+    &:first-child
+      border-top-left-radius: 5px
+      border-bottom-left-radius: 5px
+
+    &:last-child
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
+
+  a:hover
+    cursor: pointer
+    background: lighten($accent, 15)
+
+
+// Configuración del menú principal
+// -------------------------------------------------------------------------
+.menu__titulo
+  width: 100%
+  color: $titulo
+  margin: 0
+  @media screen and (max-width: 768px)
+    text-align: center
+
+.menu
+  display: flex
+  align-self: center
+  margin-bottom: -7px
+
+  > a
+    flex-grow: 1
+
+.menu__item
+  color: $link
+  text-decoration: none
+  padding: 10px
+  text-align: center
+
+  &:hover
+    background-color: $accent
+    color: white
+
+.menu__usuario
+  a
+    color: lighten(red, 10)
+
+    &:hover
+      color: lighten(red, 20)
+
+.linea-nav
+  height: 7px
+  background-color: $accent
+
+// Configuración del menú lateral
+// -------------------------------------------------------------------------
+.menu__item--lateral
+
+
+
+// Configuración para la portada
+// -------------------------------------------------------------------------
+.portada
+  height: 250px
+  overflow: hidden
+
+  img
+    width: 100%
+
+
+// Configuración del contenido principal
+// -------------------------------------------------------------------------
+.contenido__principal
+  article
+    padding: 10px
+
+    p
+      text-align: justify
+  @media screen and (max-width: 768px)
+    width: 100%
+
+
+// Configuración del pie de página principal
+// -------------------------------------------------------------------------
+.pie-principal
+  background-color: $pie-principal-color
+  color: #fff
+  padding: 20px
+  text-align: center
+
+.contenido-error
+  text-align: center
+
+/* -------------------------------------------------------------------------
+  ELEMENTOS GENERALES
+   ------------------------------------------------------------------------- */
+img
+  max-width: 100%
+
+
+// Configuración para las tablas, donde se muestran los datos de la db
+// -------------------------------------------------------------------------
+.tabla
+  overflow: auto
+
+
+// Configuración del panel, se utiliza por ejemplo para listar las categorías
+// -------------------------------------------------------------------------
+.panel
+  border: 1px solid $general
+  border-radius: 3px
+  padding: 5px
+  margin-right: 5px
+  ul
+    padding: 0
+    margin: 0
+    li
+      text-align: center
+      list-style: none
+      padding: 10px
+      &:hover
+        border-left: 2px solid $accent
+
+// Configuracíon para las citas
+// -------------------------------------------------------------------------
+.cita
+  padding-left: 50px
+  font-size: 18px
+  font-style: italic
+  color: darken($general, 15)
+  text-align: justify
+
+  &__autor
+    margin: 10px
+    font-weight: bold
+    color: $pie-principal-color
+
+  &__comillas
+    width: 20%
+    display: inline-block
+
+
+// Configuración para el elemento de una lista que está activo
+// -------------------------------------------------------------------------
+.lista-activo
+  border-left: 2px solid $accent
+
+
+// Configuración para los elementos del formulario, y de Vue
+// -------------------------------------------------------------------------
+.fade-enter-active, .fade-leave-active
+  transition: opacity .9s
+
+.fade-enter, .fade-leave-to
+  opacity: 0
