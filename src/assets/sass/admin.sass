@@ -1,0 +1,147 @@
+@import general
+
+$border-color: rgb(210, 210, 210)
+
+html
+  min-height: 100vh
+
+body
+  background-color: rgba(233, 233, 233, 0.2)
+  position: relative
+  min-height: 100vh
+  // Jaja, no borrar el border porque se desconfigura
+  // seguramente es un collapso de "margenes" o elementos.
+  border-bottom: 1px solid white
+  box-sizing: border-box
+
+.top-nav
+  background-color: black
+  color: white
+  border-bottom: 1px solid $border-color
+  // position: fixed
+  width: 100%
+  height: 60px
+  top: 0
+  left: 0
+  z-index: 10
+  display: flex
+  align-items: center
+  box-shadow: 2px 3px 2px rgba(233, 233, 233, 0.8)
+  @media screen and (max-width: 768px)
+    border: none
+
+  .container_logo
+    display: flex
+    align-items: center
+    h1
+      padding: 0
+      margin: 0
+      font-size: 1.5rem
+      color: white
+    a
+      color: white
+      text-decoration: none
+
+  .container_icons
+    // border: 1px solid
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    a
+      color: white
+      text-align: center
+      // border: 1px solid
+      padding: 0px 5px
+      @media screen and (max-width: 768px)
+        justify-content: center
+      &:hover
+        color: $info
+    @media screen and (max-width: 768px)
+      width: 100%
+      justify-content: center
+
+.container
+  width: 90%
+  padding: 0px 5px
+  max-width: 1033px
+  margin: auto
+
+
+.main_content
+  background-color: white
+  border: 1px solid $border-color
+  padding: 5px 10px 10px 0px
+  border-radius: 5px
+  margin: 50px auto
+  @media screen and (max-width: 768px)
+    width: 100%
+    // margin: 50px 0px
+    border: none
+    margin-top: 0
+
+.account__aside
+  display: flex
+  flex-direction: column
+  border-right: 1px solid $border-color
+  @media screen and (max-width: 768px)
+    width: 100%
+    border: none
+    border-bottom: 1px solid $border-color
+    margin-bottom: 20px
+  a
+    color: black
+    border-left: 2px solid transparent
+    text-decoration: none
+    padding: 10px 25px
+    &:hover
+      border-left: 2px solid rgba(226, 225, 225, 1)
+      background-color: rgba(226, 225, 225, 0.2)
+
+.content
+  padding: 10px 50px
+  @media screen and (max-width: 768px)
+    width: 100%
+
+
+.footer
+  position: absolute
+  left: 0
+  bottom: 0
+  background-color: white
+  height: 60px
+  width: 100%
+  border-top: 1px solid $border-color
+
+  &__content
+    @extend .container
+    display: flex
+    justify-content: center
+    padding: 10px
+
+.form_item
+  // border: 1px solid
+  margin-bottom: 10px
+  display: flex
+  align-items: center
+
+.container__grid
+  // border: 1px solid
+  margin-bottom: 15px
+
+.tasks
+  width: 100%
+  display: flex
+  // border: 1px solid blue
+  justify-content: space-between
+  // height: 150px
+  a
+    flex-grow: 1
+    text-decoration: none
+    &:hover
+      background-color: rgb(235, 235, 235)
+  .square
+    border: 1px solid $border-color
+    padding: 30px
+    display: flex
+    flex-direction: column
+    text-align: center
