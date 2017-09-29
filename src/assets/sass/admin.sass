@@ -70,12 +70,13 @@ body
 .main_content
   background-color: white
   border: 1px solid $border-color
-  padding: 5px 10px 10px 0px
   border-radius: 5px
-  margin: 50px auto
+  margin-top: 50px
+  margin-bottom: 50px
+  padding: 0
   @media screen and (max-width: 768px)
     width: 100%
-    // margin: 50px 0px
+    margin: 50px 0px
     border: none
     margin-top: 0
 
@@ -83,6 +84,7 @@ body
   display: flex
   flex-direction: column
   border-right: 1px solid $border-color
+  padding: 0
   @media screen and (max-width: 768px)
     width: 100%
     border: none
@@ -98,6 +100,8 @@ body
       background-color: rgba(226, 225, 225, 0.2)
 
 .content
+  background-color: white
+  margin-top: 20px
   padding: 10px 50px
   @media screen and (max-width: 768px)
     width: 100%
@@ -106,10 +110,11 @@ body
 .footer
   position: absolute
   left: 0
-  bottom: 0
+  bottom: -50px
   background-color: white
   height: 60px
   width: 100%
+  margin-top: 20px
   border-top: 1px solid $border-color
 
   &__content

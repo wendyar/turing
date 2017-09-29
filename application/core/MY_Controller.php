@@ -11,6 +11,8 @@ class MY_Controller extends CI_Controller{
     {
       redirect(base_url());
     }
+
+    $this->output->enable_profiler(TRUE);
   }
 
 }

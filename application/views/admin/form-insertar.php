@@ -13,7 +13,7 @@
   <article class="">
     <h2>Registrar nuevo libro</h2>
 
-    <form class="form" action=<?php echo BASE_URL.'/admin/insertarLibro' ?> method="post">
+    <form class="form" action=<?php echo base_url().'/admin/insertarLibro' ?> method="post">
 
       <!-- Registrar autor -->
       <div class="row gutters auto">
@@ -38,14 +38,14 @@
               <label for="pais_id">Nacionalidad</label>
               <select class="pais_id" name="pais_id" id="pais_id" v-model='autor_nuevo_pais' >
                 <option value=""> -- </option>
-                <?php if (isset($this->paises)): ?>
-                  <?php while ($pais = $this->paises->fetch_object()) { ?>
+                <?php if (isset($paises)): ?>
 
+                  <?php foreach ($paises->result() as $pais): ?>
                     <!-- Inicio del ciclo for -->
                     <option value="<?php echo $pais->id ?>"><?php echo $pais->nombre ?></option>
                     <!-- Fin del ciclo for -->
+                  <?php endforeach; ?>
 
-                  <?php } ?>
                 <?php endif; ?>
               </select>
             </div>
@@ -61,14 +61,12 @@
               <select class="" name="autor-existente" id="autor-existente" v-model='autor_existente'>
                 <option value=""> -- </option>
 
-                <?php if (isset($this->autores)): ?>
-                  <!-- Inicio del ciclo for -->
-                  <?php while ($autor = $this->autores->fetch_object()) { ?>
+                <?php if (isset($autores)): ?>
 
+                  <?php foreach ($autores->result() as $autor): ?>
                     <option value="<?php echo $autor->id ?>"><?php echo $autor->nombres ?></option>
+                  <?php endforeach; ?>
 
-                  <?php } ?>
-                  <!-- Fin del ciclo for -->
                 <?php endif; ?>
 
 
@@ -101,14 +99,10 @@
               <select class="" name="categoria-existente" v-model='categoria_existente' >
                 <option value=""> -- </option>
 
-                <?php if (isset($this->categorias)): ?>
-                  <?php while ($categoria = $this->categorias->fetch_object()) { ?>
-
-                    <!-- Inicio del ciclo for -->
-                    <option value="<?php echo $categoria->id ?>"><?php echo $categoria->nombre ?></option>
-                    <!-- Fin del ciclo for -->
-
-                  <?php } ?>
+                <?php if (isset($categorias)): ?>
+                  <?php foreach ($categorias->result() as $categoria): ?>
+                      <option value="<?php echo $categoria->id ?>"><?php echo $categoria->nombre ?></option>
+                  <?php endforeach; ?>
                 <?php endif; ?>
             </select>
 

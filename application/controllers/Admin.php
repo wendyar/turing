@@ -12,7 +12,7 @@
 /**
  *
  */
-class Admin extends CI_Controller
+class Admin extends MY_Controller
 {
   /**
    * Array que almacena los datos que serán insertados
@@ -21,11 +21,22 @@ class Admin extends CI_Controller
    */
   private $data = array();
 
+  public $plantilla;
+
   // -----------------------------------------------------------------
 
   function __construct()
   {
     parent::__construct();
+
+
+    $this->plantilla = "layouts/control";
+    $this->load->model('Libros_M', 'libros_m');
+
+    if ($this->session->userdata('sesion_permisos_usuario') != 1)
+    {
+      redirect(base_url().'usuario/dashboard');
+    }
   }
 
   // -----------------------------------------------------------------
@@ -38,39 +49,11 @@ class Admin extends CI_Controller
    */
   public function index()
   {
-    $this->view->titulo = "Panel de administración";
-    $this->view->pagina = "admin";
-    $this->view->render('base');
+    $data['titulo'] = "Panel de administración";
+    $data['sub_pagina'] = "usuario/dashboard";
+    $data['pagina'] = "layouts/dashboard";
+    $this->load->view($this->plantilla, $data);
   }
-
-  /**
-   * Función para consultar los libros de la base de datos.
-   *
-   * @return void
-   */
-  public function consultarLibro()
-  {
-    // Inicia la conexión con la base de datos...
-    $this->load->database();
-
-    // Obtiene los libros de la base de datos
-    $this->view->libros = $this->load->db->get('libro');
-
-    // Se para una instancia de la base de datos
-    // para que se puedan realizar consultas desde
-    // la vista, se puede utilizar perfectamente
-    // las funciones de la base de datos.
-    $this->view->db = $this->load->db;
-
-    // Establece las variables para la página y la carga
-    $this->view->titulo = "Consulta de datos";
-    $this->view->pagina = "consulta";
-    $this->view->render('base');
-
-    // Cierra la conexión con la base de datos
-    $this->load->db->close();
-  }
-
 
   /**
    * Función para la inserción de un nuevo autor
@@ -89,9 +72,9 @@ class Admin extends CI_Controller
     // reutilizada por otras internamente.
     if ($nombres == "" && $apellidos == "" && $pais_id == "")
     {
-      $nombres = $_POST["nombres"];
-      $apellidos = $_POST["apellidos"];
-      $pais_id = $_POST["pais_id"];
+      $nombres    = $_POST["nombres"];
+      $apellidos  = $_POST["apellidos"];
+      $pais_id    = $_POST["pais_id"];
     }
 
     // Verifica que el autor no exista
@@ -136,15 +119,14 @@ class Admin extends CI_Controller
     // Datos locales para registrar el nuevo libro
     $data = array();
 
-    // Inicia la conexión con la base de datos
-    $this->load->database();
 
     $titulo = $_POST["titulo"];
     $descripcion = $_POST["descripcion"];
 
     // Verifica primero si el título que se intenta agregar
     // no esté duplicado en la base de datos
-    if ($this->load->db->if_exists('libro', array('titulo' => $titulo)))
+
+    if ($this->libros_m->siExiste('titulo', $titulo) )
     {
       $GLOBALS['message'] = "Este título: '$titulo' ya está registrado.";
       $GLOBALS['type_message'] = "error";
@@ -287,8 +269,6 @@ class Admin extends CI_Controller
 
   public function borrarLibro($titulo_id = "")
   {
-    // Inicia conexión con la base de datos.
-    $this->load->database();
 
     $return_val = false;
 
@@ -333,39 +313,35 @@ class Admin extends CI_Controller
 
   public function formNuevoLibro()
   {
-    // Inicia la conexión con la base de datos
-    $this->load->database();
 
-    // Instancia para poder comunicar con la base de datos
-    $this->view->db = $this->load->db;
+    $this->load->model('Pais_M', 'pais_m');
+    $this->load->model('Autor_M', 'autor_m');
+    $this->load->model('Categorias_M', 'categorias_m');
 
-    // Lo siguiente aún se podría mejorar...
-    $this->view->paises     = $this->load->db->get('pais');
-    $this->view->autores    = $this->load->db->get('autor');
-    $this->view->categorias = $this->load->db->get('categorias');
+    $data['paises'] = $this->pais_m->obtenerDatos();
+    $data['autores'] = $this->autor_m->obtenerDatos();
+    $data['categorias'] = $this->categorias_m->obtenerDatos();
 
     // Establece las variables para la página y la carga
-    $this->view->titulo = "Nuevo registro de libro";
-    $this->view->pagina = "form-insertar";
-    $this->view->render("base");
+    $data['titulo'] = "Nuevo registro de libro";
+    $data['sub_pagina'] = "admin/form-insertar";
+    $data['pagina'] = "layouts/dashboard";
+    $this->load->view($this->plantilla, $data);
 
-    // Cierra la conexión con la base de datos
-    $this->load->db->close();
   }
 
 
   public function formBorrarLibro()
   {
-    // Inicia la conexión con la base de datos
-    $this->load->database();
 
     // Instancia para poder coumicar con la base de datos
-    $this->view->libros = $this->load->db->get('libro');
+    $data['libros'] = $this->libros_m->obtenerDatos();
 
     // Establece las variables para la página y la carga...
-    $this->view->titulo = "Eliminar un título";
-    $this->view->pagina = "form-borrado";
-    $this->view->render('base');
+    $data['titulo'] = "Eliminar un título";
+    $data['sub_pagina'] = "admin/form-borrado";
+    $data['pagina'] = "layouts/dashboard";
+    $this->load->view($this->plantilla, $data);
 
     // Cierra la conexión con la base de datos
     $this->load->db->close();

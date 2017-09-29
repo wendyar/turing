@@ -9,7 +9,7 @@ class Usuario extends MY_Controller {
   {
     parent::__construct();
 
-    $this->plantilla = "layouts/dashboard";
+    $this->plantilla = "layouts/control";
     $this->load->model('Usuario_M', 'usuario_m');
   }
 
@@ -21,7 +21,8 @@ class Usuario extends MY_Controller {
   public function dashboard()
   {
     $data['titulo'] = "Dashboard";
-    $data['pagina'] = "usuario/dashboard";
+    $data['pagina'] = "layouts/dashboard";
+    $data['sub_pagina'] = "usuario/dashboard";
     $this->load->view($this->plantilla, $data);
   }
 
@@ -57,7 +58,9 @@ class Usuario extends MY_Controller {
       $data['u_correo']   = $us_cons->correo;
 
       $data['titulo'] = "Perfil";
-      $data['pagina'] = "usuario/perfil";
+      $data['pagina'] = "layouts/dashboard";
+      $data['sub_pagina'] = "usuario/perfil";
+
 
       $this->load->view($this->plantilla, $data);
     }
@@ -146,7 +149,8 @@ class Usuario extends MY_Controller {
     if ($this->form_validation->run() == FALSE)
     {
       $data['titulo'] = "Editar contraseña";
-      $data['pagina'] = "usuario/contrasena";
+      $data['pagina'] = "layouts/dashboard";
+      $data['sub_pagina'] = "usuario/contrasena";
       $this->load->view($this->plantilla, $data);
     }
     else
@@ -205,7 +209,8 @@ class Usuario extends MY_Controller {
     if ($this->form_validation->run() == FALSE)
     {
       $data['titulo'] = "Eliminar cuenta";
-      $data['pagina'] = "usuario/borrar";
+      $data['pagina'] = "layouts/dashboard";
+      $data['sub_pagina'] = "usuario/borrar";
       $this->load->view($this->plantilla, $data);
     }
     else
@@ -229,9 +234,10 @@ class Usuario extends MY_Controller {
         $this->usuario_m->eliminar($id);
         $data['titulo'] = "Eliminando cuenta";
         $data['mensaje'] = "¡Cuenta eliminada!";
+        $data['pagina'] = "layouts/message";
         $this->session->sess_destroy();
 
-        $this->load->view('layouts/message', $data);
+        $this->load->view($this->plantilla, $data);
         return 0;
       }
 

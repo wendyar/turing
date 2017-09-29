@@ -22,35 +22,27 @@ $(document).ready(function(){
 
 
   console.log("Uri es: ");
-  if (uri.includes('index.php'))
-  {
-    console.log(uri);
-    console.log("La uri contiene la palabra index.php");
-    base_url = "../"
-  }
-  else {
-    console.log(uri);
-    console.log("La uri no contiene index");
-    base_url = "asssets/";
-  }
+  console.log(uri);
+
+  base_url = "asssets/";
 
 
 
   // Configuración para la portada del carrusel
   $(".carrusel").vegas({
     slides: [
-      { src: base_url + "assets/imagenes/libros10.jpg" },
-      { src: base_url + "assets/imagenes/libros3.jpeg" },
-      { src: base_url + "assets/imagenes/libros4.jpeg" },
-      { src: base_url + "assets/imagenes/libros5.jpeg" },
-      { src: base_url + "assets/imagenes/libros6.jpg" },
-      { src: base_url + "assets/imagenes/libros7.jpg" },
-      { src: base_url + "assets/imagenes/libros8.jpg" },
-      { src: base_url + "assets/imagenes/libros9.jpg" },
-      { src: base_url + "assets/imagenes/libros10.jpg" },
+      { src: base_url + "../assets/imagenes/libros10.jpg" },
+      { src: base_url + "../assets/imagenes/libros3.jpeg" },
+      { src: base_url + "../assets/imagenes/libros4.jpeg" },
+      { src: base_url + "../assets/imagenes/libros5.jpeg" },
+      { src: base_url + "../assets/imagenes/libros6.jpg" },
+      { src: base_url + "../assets/imagenes/libros7.jpg" },
+      { src: base_url + "../assets/imagenes/libros8.jpg" },
+      { src: base_url + "../assets/imagenes/libros9.jpg" },
+      { src: base_url + "../assets/imagenes/libros10.jpg" },
     ],
     animation: 'kenburns',
-    overlay: base_url + '/assets/js/vegas/overlays/01.png',
+    overlay: base_url + '../assets/js/vegas/overlays/01.png',
   });
 
 

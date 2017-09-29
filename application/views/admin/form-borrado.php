@@ -15,7 +15,7 @@
   <article>
     <h2>Borrar libro</h2>
 
-    <form class="form" action=<?php echo BASE_URL."/admin/borrarLibro" ?> method="post">
+    <form class="form" action=<?php echo base_url()."/admin/borrarLibro" ?> method="post">
       <fieldset>
         <legend><span class="error">Eliminar un título</span></legend>
 
@@ -26,7 +26,8 @@
         <option value=""> -- </option>
 
         <?php
-          while ($libro = $this->libros->fetch_object()) {
+          foreach ($libros->result() as $libro)
+          {
             echo "<option value='$libro->id'>$libro->titulo</option>";
           }
         ?>

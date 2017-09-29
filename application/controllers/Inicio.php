@@ -25,7 +25,7 @@ class Inicio extends CI_Controller
     parent::__construct();
 
     $this->plantilla = "layouts/base";
-    $this->output->enable_profiler(TRUE);
+    // $this->output->enable_profiler(TRUE);
   }
 
   public function index()
@@ -177,7 +177,7 @@ class Inicio extends CI_Controller
     $this->form_validation->set_rules('nombre-real', 'Nombre real', 'trim|required|min_length[5]|max_length[40]');
 
     // Correo electrónico
-    $this->form_validation->set_rules('correo-e', 'Correo electrónico', 'trim|required|min_length[5]|max_length[30]|valid_email');
+    $this->form_validation->set_rules('correo-e', 'Correo electrónico', 'trim|required|min_length[5]|max_length[60]|valid_email');
 
     // Contraseña
     $this->form_validation->set_rules('contrasena', 'Contraseña', 'trim|required|min_length[5]|max_length[12]');
